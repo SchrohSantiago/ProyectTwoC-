@@ -36,14 +36,13 @@
             // 
             // BAmarillo
             // 
-            this.BAmarillo.Location = new System.Drawing.Point(130, 136);
+            this.BAmarillo.Location = new System.Drawing.Point(126, 136);
             this.BAmarillo.Name = "BAmarillo";
             this.BAmarillo.Size = new System.Drawing.Size(140, 40);
             this.BAmarillo.TabIndex = 0;
-            this.BAmarillo.Text = "Amarillo";
+            this.BAmarillo.Text = "&Amarillo";
             this.BAmarillo.UseVisualStyleBackColor = true;
             this.BAmarillo.Click += new System.EventHandler(this.BAmarillo_Click);
-            this.BAmarillo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BAmarillo_KeyPress);
             // 
             // BRojo
             // 
@@ -51,11 +50,9 @@
             this.BRojo.Name = "BRojo";
             this.BRojo.Size = new System.Drawing.Size(144, 40);
             this.BRojo.TabIndex = 1;
-            this.BRojo.Text = "Rojo";
+            this.BRojo.Text = "&Rojo";
             this.BRojo.UseVisualStyleBackColor = true;
             this.BRojo.Click += new System.EventHandler(this.BRojo_Click);
-            this.BRojo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BRojo_KeyDown);
-            this.BRojo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BRojo_KeyPress);
             // 
             // BAzul
             // 
@@ -63,23 +60,21 @@
             this.BAzul.Name = "BAzul";
             this.BAzul.Size = new System.Drawing.Size(132, 40);
             this.BAzul.TabIndex = 2;
-            this.BAzul.Text = "Azul";
+            this.BAzul.Text = "A&zul";
             this.BAzul.UseVisualStyleBackColor = true;
             this.BAzul.Click += new System.EventHandler(this.BAzul_Click);
-            this.BAzul.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BAzul_KeyPress);
             // 
             // BCerrar
             // 
-            this.BCerrar.Location = new System.Drawing.Point(543, 235);
+            this.BCerrar.Location = new System.Drawing.Point(543, 231);
             this.BCerrar.Name = "BCerrar";
             this.BCerrar.Size = new System.Drawing.Size(94, 43);
             this.BCerrar.TabIndex = 3;
-            this.BCerrar.Text = "Cerrar";
+            this.BCerrar.Text = "&Cerrar";
             this.BCerrar.UseVisualStyleBackColor = true;
             this.BCerrar.Visible = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             this.BCerrar.Paint += new System.Windows.Forms.PaintEventHandler(this.BCerrar_Paint);
-            this.BCerrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BCerrar_KeyPress);
             // 
             // FColores
             // 

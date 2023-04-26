@@ -12,14 +12,14 @@ namespace Ejercicio3
 {
     
     public partial class FColores : Form
-    {
+    { 
+        int contadorAmarillo, contadorAzul, contadorRojo;
         public FColores()
         {
             InitializeComponent();
             BackColor = Color.White; 
-            BRojo.Focus();
-            BAmarillo.Focus();
-            BAzul.Focus();   //La funcion Focus () hara que los botones esten receptivos ante determinados eventos por parte del usuario
+
+           
 
         }
 
@@ -28,29 +28,144 @@ namespace Ejercicio3
            
         }
 
-        private void BCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+      
 
-        private void BAmarillo_Click(object sender, EventArgs e)
+        public void BAmarillo_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Yellow;
+            if (BackColor == Color.Blue)
+            {
+
+                BackColor = Color.Green;
+            }
+            else if (BackColor == Color.Red)
+            {
+                BackColor = Color.Orange;
+            }
+            else if (BackColor == Color.Purple)
+            {
+                BackColor = Color.Black;
+            }
+            else
+            {
+                BackColor = Color.Yellow;
+            }
+
             BCerrar.Visible = true;
 
-            
+            contadorAmarillo++;
         }
 
-        private void BRojo_Click(object sender, EventArgs e)
+        public void BRojo_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Red;
+            if (BackColor == Color.Blue)
+            {
+
+                BackColor = Color.Purple;
+            }
+            else if (BackColor == Color.Yellow)
+            {
+                BackColor = Color.Orange;
+            }
+            else if (BackColor == Color.Green)
+            {
+                BackColor = Color.Black;
+            }
+            else
+            {
+                BackColor = Color.Red;
+            }
             BCerrar.Visible = true;
+
+
+            contadorRojo++;
+           
         }
 
         private void BAzul_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Blue;
+            if (BackColor == Color.Red)
+            {
+
+                BackColor = Color.Purple;
+            }
+            else if (BackColor == Color.Yellow)
+            {
+                BackColor = Color.Green;
+            }
+            else if (BackColor == Color.Orange)
+            {
+                BackColor = Color.Black;
+            }
+            else
+            {
+                BackColor = Color.Blue;
+            }
             BCerrar.Visible = true;
+
+            contadorAzul++;
+           
+        }
+
+        public void BCerrar_Click(object sender, EventArgs e)
+        {
+            /* Aca tendria que verse el MessageBox.Show con las veces que fue seleccionado cada uno, luego de esto que se 
+            ejecute el CLOSE */
+            if ((contadorAmarillo == contadorAzul) && (contadorAzul == contadorRojo) && (contadorRojo == contadorAmarillo) && (contadorAmarillo == contadorRojo))
+            {
+                MessageBox.Show(
+                    $"Todos los botones fueron presionados las mismas veces: \n \n Amarillo: {contadorAmarillo} \n Rojo: {contadorRojo} \n Azul: {contadorAzul} ");
+
+                MessageBox.Show(
+                    $"1°. - Color “Amarillo”: {contadorAmarillo} veces \n 1°. - Color “Azul”: {contadorAzul} veces \n 1°. - Color “Rojo”: {contadorRojo} vez"
+                );
+
+
+            } else if ((contadorAmarillo > contadorAzul ) && (contadorAmarillo > contadorRojo))
+            {
+                MessageBox.Show($"El boton Amarillo fue el mas seleccionado: {contadorAmarillo} veces");
+
+               
+
+                if ((contadorAzul < contadorRojo))
+                {
+                    MessageBox.Show($"1°. - Color “Amarillo”: {contadorAmarillo} veces \n 2°. - Color “Rojo”: {contadorRojo} veces \n 3°. - Color “Azul”: {contadorAzul} vez");
+                }
+                else if((contadorAzul > contadorRojo))
+                {
+                    MessageBox.Show($"1°. - Color “Amarillo”: {contadorAmarillo} veces \n 2°. - Color “Azul”: {contadorAzul} veces \n 3°. - Color “Rojo”: {contadorRojo} vez");
+                }
+
+            }
+            else if ((contadorAzul > contadorAmarillo) && (contadorAzul > contadorRojo))
+            {
+                MessageBox.Show($"El boton Azul fue el mas seleccionado: {contadorAzul} veces");
+
+                if ((contadorAmarillo < contadorRojo))
+                {
+                    MessageBox.Show($"1°. - Color “Azul”: {contadorAzul} veces \n 2°. - Color “Rojo”: {contadorRojo} veces \n 3°. - Color “Amarillo”: {contadorAmarillo} vez");
+                }
+                else if ((contadorAmarillo > contadorRojo))
+                {
+                    MessageBox.Show($"1°. - Color “Azul”: {contadorAzul} veces \n 2°. - Color “Amarillo”: {contadorAmarillo} veces \n 3°. - Color “Rojo”: {contadorRojo} vez");
+                }
+
+            }
+            else if ((contadorRojo > contadorAmarillo) && (contadorRojo > contadorAzul) )
+            {
+                MessageBox.Show($"El boton Rojo fue el mas seleccionado: {contadorRojo} veces");
+
+                if ((contadorAmarillo < contadorAzul))
+                {
+                    MessageBox.Show($"1°. - Color “Rojo”: {contadorRojo} veces \n 2°. - Color “Azul”: {contadorAzul} veces \n 3°. - Color “Amarillo”: {contadorAmarillo} vez");
+                }
+                else if ((contadorAmarillo > contadorAzul))
+                {
+                    MessageBox.Show($"1°. - Color “Rojo”: {contadorRojo} veces \n 2°. - Color “Amarillo”: {contadorAmarillo} veces \n 3°. - Color “Azul”: {contadorAzul} vez");
+                }
+            }
+
+
+            Close();
         }
 
         private void BCerrar_Paint(object sender, PaintEventArgs e)
@@ -58,42 +173,7 @@ namespace Ejercicio3
        
         }
 
+       
 
-        private void BRojo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == 'r') || (e.KeyChar == 'R')){
-                BRojo.PerformClick();
-            }
-        }
-        private void BAmarillo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == 'a') || (e.KeyChar == 'A')) {
-                BAmarillo.PerformClick();
-            }
-        }
-        
-
-        private void BAzul_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == 'z') || (e.KeyChar == 'Z'))
-            {
-                BAzul.PerformClick();
-            }
-        }
-
-        private void BCerrar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == 'c') || (e.KeyChar == 'C'))
-            {
-                BCerrar.PerformClick();
-            }
-        }
-
-        private void BRojo_KeyDown(object sender, KeyEventArgs e)
-        {
-             if (e.KeyCode == Keys.R) {
-                BRojo.PerformClick();
-            }
-        }
     }
 }
