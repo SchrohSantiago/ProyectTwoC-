@@ -1,6 +1,6 @@
 ﻿namespace Ejercicio1
 {
-    partial class Form1
+    partial class FValorAbsYRedondeo
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -106,7 +106,7 @@
             this.btnRedondearValor.UseVisualStyleBackColor = true;
             this.btnRedondearValor.Click += new System.EventHandler(this.btnRedondearValor_Click);
             // 
-            // Form1
+            // FValorAbsYRedondeo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.btnTransformarAValorAbs);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FValorAbsYRedondeo";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Ejercicio2
 {
@@ -16,9 +17,9 @@ namespace Ejercicio2
         {
             InitializeComponent();
 
-            this.BackColor = Color.Gray;
+            BackColor = Color.Gray;
 
-            this.Text = "GRIS";
+            Text = "GRIS";
         }
 
         private void FMovedizo_Load(object sender, EventArgs e)
@@ -28,34 +29,29 @@ namespace Ejercicio2
 
         private void FMovedizo_Click(object sender, EventArgs e)
         {
-            switch (this.BackColor.Name) 
+            switch (BackColor.Name) 
             {
                 case "Green":
                 case "Gray":
-                    this.BackColor = Color.Red;
-                    this.Text = "ROJO";
-                    //this.Left += 10;
-                    //this.Top += 10;
-                    Location = new Point( + 10,+ 10);
-                    this.Width -= 15;
-                    this.Height += 10;
+                    BackColor = Color.Red;
+                    Text = "ROJO";
+                    Location = new Point( Location.X + 10,Location.Y + 10);
+                    Width -= 15;
+                    Height += 10;
                     break;
                 case "Red":
-                    this.BackColor = Color.Blue;
-                    this.Text = "AZUL";
-                    //this.Left -= 15;
-                    Location = new Point(- 15, 0);
-                    this.Width += 20;
-                    this.Height += 5;
+                    BackColor = Color.Blue;
+                    Text = "AZUL";
+                    Location = new Point(Location.X - 15, Location.Y + 0);
+                    Width += 20;
+                    Height += 5;
                     break;
                 case "Blue":
-                    this.BackColor = Color.Green;
-                    this.Text = "VERDE";
-                    //this.Left -= 5;
-                    //this.Top -= 15;
-                    Location = new Point( + 20,  -15);
-                    this.Width -= 5;
-                    this.Height -= 15;
+                    BackColor = Color.Green;
+                    Text = "VERDE";
+                    Location = new Point( Location.X + 15,Location.Y  -5);
+                    Width -= 5;
+                    Height -= 15;
                     break;
                 default:
                     break;

@@ -86,7 +86,7 @@
             this.Controls.Add(this.BRojo);
             this.Controls.Add(this.BAmarillo);
             this.Name = "FColores";
-            this.Text = "Form1";
+            this.Text = "FColores";
             this.Load += new System.EventHandler(this.FColores_Load);
             this.ResumeLayout(false);
 

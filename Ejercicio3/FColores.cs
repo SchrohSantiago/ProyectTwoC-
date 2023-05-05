@@ -17,10 +17,7 @@ namespace Ejercicio3
         public FColores()
         {
             InitializeComponent();
-            BackColor = Color.White; 
-
-           
-
+            BackColor = Color.White;
         }
 
         private void FColores_Load(object sender, EventArgs e)
@@ -28,8 +25,7 @@ namespace Ejercicio3
            
         }
 
-      
-
+        
         public void BAmarillo_Click(object sender, EventArgs e)
         {
             if (BackColor == Color.Blue)
